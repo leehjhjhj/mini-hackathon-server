@@ -3454,4 +3454,4 @@ def get_movie_list(request):
     }
   ]
 }
-    return JsonResponse(context, status=status.HTTP_200_OK)
+    return Response(context, status=status.HTTP_200_OK)

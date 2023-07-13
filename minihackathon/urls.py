@@ -19,5 +19,7 @@ from server.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', get_movie_list, name='get_movie_list'),
+    path('movies', get_movie_list, name='get_movie_list'),
+    path('movies/<int:pk>', get_movie_detail, name='get_movie_detail'),
+    path('movie/comments/<int:pk>', get_comments, name='get_comments'),
 ]

@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-nnwyoz!%901n_3$kn3whc-f75&lojcs17840vmx6+qmw@t(ywh
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
+    "http://127.0.0.1:8000",
+    "https://api.hufs-likelion-movie.kro.kr"]
 
 # Application definition
 
@@ -39,9 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'server',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
